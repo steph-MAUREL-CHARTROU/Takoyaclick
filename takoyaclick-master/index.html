@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>TAKOYACLICK</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/takoyaclick.css">
+		<link href="https://fonts.googleapis.com/css?family=Pangolin&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div id='plusScore1' class='off'>+1</div>
+		<div id='plusScore2' class='off'>+1</div>
+		<div id='plusScore3' class='off'>+1</div>
+		<div id='plusScore4' class='off'>+1</div>
+		<div id='plusScore5' class='off'>+1</div>
+		<div id='plusScore6' class='off'>+1</div>
+		<div id='plusScore7' class='off'>+1</div>
+		<div id='plusScore8' class='off'>+1</div>
+		<div id='plusScore9' class='off'>+1</div>
+		<div id='plusScore10' class='off'>+1</div>
+		<div id='plusScore11' class='off'>+1</div>
+		<div id='plusScore12' class='off'>+1</div>
+		<div id='plusScore13' class='off'>+1</div>
+		<div id='plusScore14' class='off'>+1</div>
+		<div id='plusScore15' class='off'>+1</div>
+		<div id='plusScore16' class='off'>+1</div>
+		<div id='plusScore17' class='off'>+1</div>
+		<div id='plusScore18' class='off'>+1</div>
+		<div id=container>
+
+			<!-- haut de la page -->
+			<div id='haut'>
+				<div></div>
+				<h1>Takoyaclick</h1>
+				<button id='flag' class='flag1'>
+					<img src='Image/japon.png' alt='drapeau' onclick='buttonFlag()'>
+				</button>
+			</div>
+
+			<div id='tsu'>
+				<img class='tsunami1' src='Image/Tsunami2.png'>
+				<img class='tsunami2' src='Image/Tsunami2.png'>
+				<img class='tsunami3' src='Image/Tsunami2.png'>
+				<img class='tsunami4' src='Image/Tsunami2.png'>
+				<img class='tsunami5' src='Image/Tsunami2.png'>
+			</div>
+
+			<div id='jeu'>
+
+				<!-- parti gauche avec clickr et compteurs -->
+				<div id='gauche'>
+					<button id='takoyaki' onclick='buttonClick()'>
+						<img onmouseover='tako1(this)' onmouseout='tako2(this)' src='Image/takoyakiCONTOUR.png' alt='takoyaki'>
+					</button>
+					<div id='affichage'>
+						<div id='soja'><p>0/sec</p></div>
+						<div id='wasabi'><p>0</p></div>
+					</div>
+
+					<p>*"Kukku" désigne un cuisinier en japonais !</p>
+				</div>
+
+				<!-- Parti droite avec bento et bonus -->
+				<div id='droite'>
+
+					<div id='bento'>
+
+						<div id='bentoGauche'>
+							<div id='pate'>
+								<div class='bouton'>
+									<button onclick='incrementerPate(this)'>
+										<img onmouseover='pate1(this)' onmouseout='pate2(this)' src='Image/pate.png' alt='pate'>
+									</button>
+								</div>
+								<div class='prix'>
+									<p>Pâte à beignet</p>
+									<p><span id='spanPate'>50 x </span><img src='Image/takoyaki' alt='takoyaki'></p>
+									<button id='infoPate'>info
+										<span>Rajoute de la pâte à beignet petit Kukku ! <br>
+		 								Chaque pâte à beignet te rajoute 1 clique <br><br><br>
+										 0 / 500</span>
+									</button>
+								</div>
+							</div>
+							<div id='poulpe'>
+								<div class='bouton'>
+									<button onclick='incrementerPoulpe(this)'>
+										<img onmouseover='poulpe1(this)' onmouseout='poulpe2(this)' src='Image/poulpe.png' alt='poulpe'>
+									</button>
+								</div>
+								<div class='prix'>
+									<p>Poulpe</p>
+									<p><span id='spanPoulpe'>500 x </span><img src='Image/takoyaki' alt='takoyaki'></p>
+									<button id='infoPoulpe'>info
+										<span>Rajoute du poulpe petit Kukku ! <br>
+		 								Chaque pouple te rajoute 5 cliques <br><br><br>
+		 								0 / 500</span>
+									</button>
+								</div>
+							</div>
+							<div id='sauce'>
+								<div class='bouton'>
+									<button onclick='incrementerSauce(this)'>
+										<img onmouseover='sauce1(this)' onmouseout='sauce2(this)' src='Image/sauce.png' alt='sauce'>
+									</button>
+								</div>
+								<div class='prix'>
+									<p>Sauce</p>
+									<p><span id='spanSauce'>5k x </span><img src='Image/takoyaki' alt='takoyaki'></p>
+									<button id='infoSauce'>info
+										<span>Rajoute de la sauce petit Kukku ! <br>
+		 								Chaque sauce te rajoute 10 cliques <br><br><br>
+										 0 / 500</span>
+									</button>
+								</div>
+							</div>
+							<div id='katsuo'>
+								<div class='bouton'>
+									<button onclick='incrementerKatsuo(this)'>
+										<img onmouseover='bonite1(this)' onmouseout='bonite2(this)' src='Image/bonite.png' alt='bonite'>	
+									</button>
+								</div>
+								<div class='prix'>
+									<p>Katsuobushi</p>
+									<p><span id='spanKatsuo'>8k x </span><img src='Image/takoyaki' alt='takoyaki'></p>
+									<button id='infoKatsuo'>info
+										<span>Rajoute du Katsuobushi petit Kukku ! <br>
+		 								Chaque Katsuobushi te rajoute 20 cliques <br><br><br>
+										 0 / 250
+										</span>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div id='bentoCentre'>
+							<div id='brochette'>
+								<div class='bouton'>
+									<button onclick='incrementerBrochette(this)'>
+										<img onmouseover='brochette1(this)' onmouseout='brochette2(this)' src='Image/brochette.png' alt='brochette'>
+									</button>
+								</div>
+								<div class='prix'>
+									<p>Brochette x3</p>
+									<p><span id='spanBrochette'>1k x </span><img src='Image/takoyaki' alt='takoyaki'></p>
+									<button id='infoBrochette'>info
+										<span>Fais des brochettes petit Kukku ! <br>
+										 Chaque brochette clique pour toi X 3 <br><br><br>
+										 0 / 250
+										</span>
+									</button>
+								</div>
+							</div>
+							<div id='bonusBento'>
+								<div class='bouton'>
+									<button onclick='incrementerBento(this)'>
+										<img onmouseover='bento1(this)' onmouseout='bento2(this)' src='Image/bento.png' alt='bento'>
+									</button>
+								</div>
+								<div class='prix'>
+									<p>Bento</p>
+									<p><span id='spanBento'>2.5k x </span><img src='Image/takoyaki' alt='takoyaki'></p>
+									<button id='infoBento'>info
+										<span>Fais des bentos petit Kukku ! <br>
+										 Chaque bento clique pour toi X 6 <br><br><br>
+										 0 / 250
+										</span>
+									</button>
+								</div>
+							</div>
+							<div id='kukku'>
+								<div class='bouton'>
+									<button onclick='incrementerKukku(this)'>
+										<img onmouseover='kukku1(this)' onmouseout='kukku2(this)' src='Image/kukku.png' alt='cuisinier'>
+									</button>
+								</div>
+								<div class='prix'>
+									<p>Petits Kukkus</p>
+									<p><span id='spanKukku'>10k x </span><img src='Image/takoyaki' alt='takoyaki'></p>
+									<button id='infoKukku'>info
+										<span>Engage plus de petits kukkus !<br>
+										 Chaque kukkus clique pour toi X 12 <br><br><br>
+										 0 / 250
+										</span>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div id='bentoDroite'>
+							<div id='livreur'>
+								<div class='bouton'>
+									<button onclick='incrementerLivreur(this)'>
+										<img onmouseover='livreur1(this)' onmouseout='livreur2(this)' src='Image/livreur.png' alt='livreur'>
+									</button>
+								</div>
+
+								<div class='prix'>
+									<p>Petits livreurs</p>
+									<p><span id='spanLivreur'>100k x </span><img src='Image/takoyaki' alt='takoyaki'></p>
+									<button id='infoLivreur'>info
+										<span>Engage plus de petits livreurs !<br>
+		 								Chaque livreur clique pour toi X 50 <br><br><br>
+		 								0 / 250
+										</span>
+									</button>
+								</div>
+							</div>
+							<div id='isakaya'>
+								<div id='restau1'>
+									<div class='bouton'>
+										<button onclick='incrementerRestau1(this)'>
+											<img onmouseover='restaurant1(this)' onmouseout='restaurant2(this)' src='Image/restaurant.png' alt='restaurant'>
+										</button>
+									</div>
+									<div class='prix'>
+										<p>Isakaya</p>
+										<p><span id='spanRestau1'>1M x </span><img src='Image/takoyaki' alt='takoyaki'></p>
+										<button id='infoRestau1'>info
+											<span>Ouvre tes propres Isakaya!<br>
+											 Chaque Isakaya clique pour toi X 250 <br><br><br>
+											 0 / 250
+											</span>
+										</button>
+									</div>
+								</div>
+								<div id='restau2'>
+									<div class='bouton'>
+										<button onclick='incrementerRestau2(this)'>
+											<img onmouseover='desRestaurants1(this)' onmouseout='desRestaurants2(this)' src='Image/desRestaurants.png' alt='restaurant2'>
+										</button>
+									</div>
+									<div class='prix'>
+										<p>Chaîne d'isakaya</p>
+										<p><span id='spanRestau2'>6.5M x </span><img src='Image/takoyaki' alt='takoyaki'></p>
+										<button id='infoRestau2'>info
+											<span>Créer ta chaine d'Isakaya!<br>
+											 Chaque Isakaya clique pour toi X 500 <br><br><br>
+											 0 / 1
+											</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<p>*"Isakaya" désigne un bistrot au Japon</p>
+				</div>
+			</div>
+			<div id='saveAlert'>
+				<span class='closebtn' onclick="this.parentElement.style.display='none';">&times;</span>
+				Partie Sauvegarder
+			</div>
+			<div id='loadAlert'>
+				<span class='closebtn' onclick="this.parentElement.style.display='none';">&times;</span>
+				Partie Charger
+			</div>
+			<div id='saveLoad'>
+				<button id='save' onclick='save()'>Sauvegarder</button>
+				<button id='load' onclick='load()'>Charger</button>
+			</div>
+		</div>
+		<script src="js/takoyaclick.js"></script>
+	</body>
+</html>

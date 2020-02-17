@@ -1,0 +1,1402 @@
+/* couleur:
+	Marron - #320F04
+	rouge - #C40A0A
+	bento gauche - #e57373
+	bento centre - #e53935
+	bento droite - #b71c1c
+	Soja - #923434
+	Wasabi - #9B8C08
+	info bulle - #D1CB8D
+*/
+
+/*-----------------------------compteur +1 sur le takoyaki--------------------------*/
+
+.on1{
+	opacity:1;
+	top:500px;
+	position: absolute;
+	color:white;
+	z-index:1;
+}
+
+.on2{
+	opacity:1;
+	top:400px;
+	position: absolute;
+	color:white;
+	z-index:1;
+}
+
+.on3{
+	opacity:1;
+	top:300px;
+	position: absolute;
+	color:white;
+	z-index:1;
+}
+
+.off{
+	position: absolute;
+	z-index:1;
+	opacity:0;
+	transition: all 4s ease;
+	top:10px;
+}
+
+#plusScore1{
+	left:17%;
+	pointer-events: none;
+}
+
+#plusScore2{
+	left:20%;
+	pointer-events: none;
+}
+
+#plusScore3{
+	left:23%;
+	pointer-events: none;
+}
+
+#plusScore4{
+	left:26%;
+	pointer-events: none;
+}
+
+#plusScore5{
+	left:29%;
+	pointer-events: none;
+}
+
+#plusScore6{
+	pointer-events: none;
+	left:31%;
+}
+
+#plusScore7{
+	pointer-events: none;
+	left:17%;
+}
+
+#plusScore8{
+	pointer-events: none;
+	left:20%;
+}
+
+#plusScore9{
+	pointer-events: none;
+	left:23%;
+}
+
+#plusScore10{
+	left:26%;
+	pointer-events: none;
+}
+
+#plusScore11{
+	pointer-events: none;
+	left:29%;
+}
+
+#plusScore12{
+	pointer-events: none;
+	left:31%;
+}
+
+#plusScore13{
+	left:17%;
+	pointer-events: none;
+}
+
+#plusScore14{
+	left:20%;
+	pointer-events: none;
+}
+
+#plusScore15{
+	pointer-events: none;
+	left:23%;
+}
+
+#plusScore16{
+	left:26%;
+	pointer-events: none;
+}
+
+#plusScore17{
+	left:29%;
+	pointer-events: none;
+}
+
+#plusScore18{
+	left:31%;
+	pointer-events: none;
+}
+
+/*--------------------------------mise en page du haut de la page------------------*/
+
+body{
+	margin:0 auto;
+	padding:0;
+	position:relative;
+	font-family:'Pangolin', cursive;
+}
+
+#container{
+	background-color: rgba(255,255,255,0.5);
+	cursor: url(../Image/Chopsticks.cur), pointer;
+}
+
+#haut{
+	width:100%;
+	display:flex;
+	justify-content: space-between;
+	align-items:center;
+	color:#320F04;
+	font-size:50px;
+	font-weight: normal;
+}
+
+h1{
+	margin:0;
+}
+
+#haut button img{
+	width:90%;
+	border:solid 2px black;
+}
+
+#haut button{
+	width:10%;
+	padding:0;
+	height:100%;
+	border:none;
+	background:none;
+	outline:none;
+	cursor: url(../Image/Chopsticks.cur), pointer;
+}
+
+/*------------------------------effet de clignotement sur le drapeau---------------*/
+.flag1 img{
+	-webkit-animation-name: clignote; /*on affecte l'animation clignote à notre bouton*/
+	-webkit-animation-duration: 1s; /*on définit la durée de l'animation à 1s*/
+	-webkit-animation-iteration-count:0; /*on dit que l'animation s'arrete.*/
+}
+
+.flag2 img{
+	-webkit-animation-name: clignote; /*on affecte l'animation clignote à notre bouton*/
+	-webkit-animation-duration: 1s; /*on définit la durée de l'animation à 1s*/
+	-webkit-animation-iteration-count:infinite; /*on dit que l'animation se répétera à l'infini.*/
+}
+
+@-webkit-keyframes clignote {
+	0%{box-shadow:0px 0px 10px 5px #320F04;}
+	50%{box-shadow:0px 0px 0px 5px red;}
+	100%{box-shadow:0px 0px 10px 5px  #320F04;}
+}
+
+
+
+/*----------------------------mise en page du centre de la page---------------------*/
+
+#jeu{
+	display:flex;
+}
+
+/*---------------------------mise en page du gauche de la page---------------------*/
+
+#gauche{
+	width:50%;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	color:#320F04;
+}
+
+#gauche button{
+	width:60%;
+	padding:0;
+	border:none;
+	background:none;
+	outline:none;
+	cursor: url(../Image/Chopsticks.cur), pointer;
+}
+
+#gauche button img{
+	width:100%;
+}
+
+#affichage{
+	width:100%;
+	display:flex;
+	justify-content: space-around;
+}
+
+#soja{
+	width:150px;
+	height:150px;
+	background-color: #923434;
+	border:solid #320F04 5px; 
+	border-radius: 100px;
+	color:white;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#wasabi{
+	margin-top:90px;
+	width:120px;
+	height:120px;
+	background-color: #9B8C08;
+	border:solid #320F04 5px; 
+	border-radius: 100px;
+	color:#320F04;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*-------------------------------mise en page de la partie droite------------------*/
+span{
+	font-family: 'Permanent Marker', cursive;
+}
+
+#bento p{
+	color:#320F04;
+}
+
+#bento button{
+	cursor: url(../Image/Chopsticks.cur), pointer;
+}
+
+/*---------------------------------------------Si grand écran--------------------------*/
+@media screen and (min-width: 1500px){
+
+	#droite{
+		width:50%;
+	}
+
+	#bento{
+		background-color: #320F04;
+		width:95%;
+		height:700px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		border-radius:10%;
+	}
+
+	#bentoGauche, #bentoCentre, #bentoDroite{
+		width:30%;
+		height:95%;
+	}
+
+	#bentoGauche, #bentoCentre, #bentoDroite{
+		display:flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	/* div des 3 bentos */
+
+	#pate, #poulpe, #sauce, #katsuo {
+		width:100%;
+		height:24%;
+		display:flex;
+		background-color: #e57373;
+	}
+
+	#pate{
+		border-radius: 10% 10% 0 0;
+		border-left: solid #320F04 10px;
+		border-top: solid #320F04 10px;
+		border-bottom: solid #320F04 5px;
+	}
+
+	#poulpe, #sauce{
+		border-left: solid #320F04 10px;
+		border-bottom: solid #320F04 5px;
+		border-top: solid #320F04 5px;
+	}
+
+	#katsuo{
+		border-radius:0 0 10% 10%;
+		border-top: solid #320F04 5px;
+		border-left: solid #320F04 10px;
+		border-bottom: solid #320F04 10px;
+	}
+
+	#brochette{
+		border-radius:10% 10% 0 0;
+		border-top: solid #320F04 10px;
+	}
+
+	#kukku{
+		border-radius:0 0 10% 10%;
+		border-bottom: solid #320F04 10px;
+	}
+
+	#livreur{
+		border-radius:10% 10% 0 0;
+		border-top: solid #320F04 10px;
+		border-bottom: solid #320F04 5px;
+	}
+
+	#restau1{
+		border-radius:0 0 0 10%;
+		border-bottom: solid #320F04 20px;
+		border-top: solid #320F04 5px;
+	}
+
+	#restau2{
+		border-radius:0 0 30% 0;
+		border-bottom: solid #320F04 20px;
+		border-top: solid #320F04 5px;
+		border-right: solid #320F04 10px;
+	}
+
+	#brochette, #bonusBento, #kukku{
+		width:100%;
+		height:34%;
+		display:flex;
+		flex-direction: column;
+		background-color: #e53935;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#livreur{
+		width:95%;
+		height:48%;
+		display:flex;
+		flex-direction: column;
+		background-color: #b71c1c;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#isakaya{
+		width:100%;
+		height:48%;
+		display:flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	#restau1, #restau2{
+		width:48%;
+		height:100%;
+		background-color: #b71c1c;
+	}
+
+	/* bouton */
+
+	#pate .bouton, #poulpe .bouton, #sauce .bouton, #katsuo .bouton {
+		width:25%;
+		display:flex;
+	}
+
+	#brochette .bouton, #bonusBento .bouton, #kukku .bouton{
+		height:25%;
+		display:flex;
+	}
+
+	#restau1, #restau2{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#livreur .bouton{
+		height:50%;
+		display:flex;
+	}
+
+	#restau1 .bouton{
+		height:50%;
+		display:flex;
+	}
+
+	#restau2 .bouton{
+		height:55%;
+		display:flex;
+	}
+
+	.bouton button{
+		background:none;
+		border:none;
+		outline:none;
+	}
+
+	#pate .bouton img, #poulpe .bouton img, #sauce .bouton img, #katsuo .bouton img, #restau1 .bouton img, #restau2 .bouton img{
+		width:100%;
+	}
+
+	#brochette .bouton img, #bonusBento .bouton img{
+		height:49px;
+	}
+
+	#livreur .bouton img{
+		height:141px;
+	}
+
+	#kukku .bouton img{
+		height:80px;
+	}
+
+	/* div prix */
+
+	.prix{
+		width:75%;
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.prix p {
+		display:flex;
+		align-items: center;
+	}
+
+	.prix img{
+		width:25px;
+		height:25px;
+	}
+
+	.prix button{
+		margin-left:60%;
+		color:white;
+		background: none;
+		outline:none;
+		border:none;
+	}
+
+	/*infobulle*/
+
+	/*INFO PATE*/
+
+	#infoPate:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+
+	/* INFO POUPLE*/
+
+		
+	#infoPoulpe:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/* INFO SAUCE */
+
+	#infoSauce:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/* INFO KATSUO */
+
+
+	#infoKatsuo:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/*INFO BROCHETTE*/
+
+	#infoBrochette:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/*INFO BENTO*/
+
+	#infoBento:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/*INFO KUKKU*/
+
+	#infoKukku:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+		
+		/*INFO LIVREUR*/
+
+	#infoLivreur:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -300px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/*INFO ISAKAYA*/
+
+	#infoRestau1:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -300px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/*INFO CHAINE ISAKAYA*/
+
+
+	#infoRestau2:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -300px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+}
+
+/*-------------------------------------si petit ecran------------------------------*/
+@media screen and (max-width: 1500px){
+	#droite{
+		width:25%;
+	}
+
+	#gauche{
+		width:75%;
+	}
+
+	#bento{
+		background-color: #320F04;
+		height:500px;
+		display:flex;
+		flex-direction:column;
+		justify-content: space-around;
+		align-items: center;
+		border-radius: 20px 0 0 20px;
+		overflow: auto;
+	}
+
+	#bentoGauche, #bentoCentre, #bentoDroite{
+		width:90%;
+		min-height:600px;
+		display:flex;
+		flex-direction:column;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	#bentoGauche{
+		margin-top:1400px;
+	}
+
+	#bentoCentre, #bentoDroite{
+		margin-top:20px;
+	}
+
+	#pate, #poulpe, #sauce, #katsuo{
+		width:100%;
+		height:23%;
+		background-color: #e57373;
+		display:flex;
+		justify-content: space-between;
+		border-radius: 20px;
+	}
+
+	#brochette, #bonusBento, #kukku{
+		width:100%;
+		height:31%;
+		background-color: #e53935;
+		display:flex;
+		justify-content: space-between;
+		border-radius: 20px;
+	}
+
+	#livreur{
+		width:100%;
+		height:48%;
+		background-color: #b71c1c;
+		display:flex;
+		justify-content: space-between;
+		border-radius: 20px;
+	}
+
+	#isakaya{
+		width:100%;
+		height:48%;
+		background-color: #b71c1c;
+		display:flex;
+		justify-content: space-between;
+		border-radius: 20px;
+	}
+
+	#restau1, #restau2{
+		display:flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	/*bouton*/
+
+	.bouton{
+		width:25%;
+		display: flex;
+	}
+
+	#isakaya .bouton{
+		width:100%;
+	}
+
+	.bouton img{
+		width:100%;
+	}
+
+	.bouton button{
+		background:none;
+		border:none;
+		outline:none;
+	}
+
+	/*prix*/
+
+	.prix{
+		width:75%;
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#isakaya .prix{
+		width:100%;
+		font-size:12px;
+	}
+
+	.prix p {
+		display:flex;
+		align-items: center;
+		margin:0;
+	}
+
+	.prix img{
+		width:25px;
+		height:25px;
+	}
+
+	.prix button{
+		color:white;
+		background: none;
+		outline:none;
+		border:none;
+	}
+
+	/*takoyaki +1*/
+	#plusScore1{
+		left:20%;
+		pointer-events: none;
+	}
+
+	#plusScore2{
+		left:25%;
+		pointer-events: none;
+	}
+
+	#plusScore3{
+		left:30%;
+		pointer-events: none;
+	}
+
+	#plusScore4{
+		left:35%;
+		pointer-events: none;
+	}
+
+	#plusScore5{
+		left:40%;
+		pointer-events: none;
+	}
+
+	#plusScore6{
+		left:45%;
+		pointer-events: none;
+	}
+
+	#plusScore7{
+		left:20%;
+		pointer-events: none;
+	}
+
+	#plusScore8{
+		left:25%;
+		pointer-events: none;
+	}
+
+	#plusScore9{
+		left:30%;
+		pointer-events: none;
+	}
+
+	#plusScore10{
+		left:35%;
+		pointer-events: none;
+	}
+
+	#plusScore11{
+		pointer-events: none;
+		left:40%;
+	}
+
+	#plusScore12{
+		left:45%;
+		pointer-events: none;
+	}
+
+	#plusScore13{
+		left:20%;
+		pointer-events: none;
+	}
+
+	#plusScore14{
+		left:25%;
+		pointer-events: none;
+	}
+
+	#plusScore15{
+		left:30%;
+		pointer-events: none;
+	}
+
+	#plusScore16{
+		pointer-events: none;
+		left:35%;
+	}
+
+	#plusScore17{
+		left:40%;
+		pointer-events: none;
+	}
+
+	#plusScore18{
+		left:45%;
+		pointer-events: none;
+	}
+
+	/*infobulle*/
+	
+	/*INFO PATE*/
+
+	#infoPate:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -50px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/* INFO POUPLE*/
+
+
+	#infoPoulpe:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -50px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/* INFO SAUCE */
+
+	#infoSauce:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -50px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/* INFO KATSUO */
+
+	
+	#infoKatsuo:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -50px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO BROCHETTE*/
+
+	#infoBrochette:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -50px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO BENTO*/
+
+	#infoBento:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -50px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO KUKKU*/
+
+	#infoKukku:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -50px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO LIVREUR*/
+		
+	#infoLivreur:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -50px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO ISAKAYA*/
+
+	#infoRestau1:hover span {
+		display: block;
+		position: absolute;
+		top: -200px; 
+		left: -30px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO CHAINE ISAKAYA*/
+
+
+	#infoRestau2:hover span {
+		display: block;
+		position: absolute;
+		top: -200px; 
+		left: -100px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+}
+
+/*--------------------------------------infobulle---------------------------------*/
+
+/*INFO PATE*/
+
+#infoPate { 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoPate:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoPate span  {
+	display: none;
+}
+
+/*INFO POUPLE*/
+
+#infoPoulpe { 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+
+}
+
+#infoPoulpe:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoPoulpe span  {
+	display: none;
+}
+
+/*INFO SAUCE*/
+
+
+#infoSauce{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoSauce:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoSauce span  {
+	display: none;
+}
+
+/*INFO KATSUOBUSHI*/
+
+
+#infoKatsuo{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+
+}
+
+#infoKatsuo:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoKatsuo span  {
+	display: none;
+}
+
+/*INFO BROCHETTE*/
+
+
+#infoBrochette{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoBrochette:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoBrochette span  {
+	display: none;
+}
+
+/*INFO BENTO*/
+
+
+#infoBento{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+
+}
+
+#infoBento:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoBento span  {
+	display: none;
+}
+
+/*INFO KUKKU*/
+
+
+#infoKukku{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoKukku:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoKukku span  {
+	display: none;
+}
+
+/*INFO LIVREUR*/
+
+
+#infoLivreur{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoLivreur:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoLivreur span  {
+	display: none;
+}
+
+/*INFO ISAKAYA*/
+
+
+#infoRestau1{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoRestau1:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoRestau1 span  {
+	display: none;
+}
+
+/*INFO CHAINE ISAKAYA*/
+
+
+#infoRestau2{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+
+#infoRestau2:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoRestau2 span  {
+	display: none;
+}
+
+/*---------------------------------------save/load----------------------------------*/
+#saveLoad{
+	display:flex;
+	justify-content: center;
+}
+
+#saveLoad button{
+	margin:10px;
+	background:#C40A0A;
+	color:#320F04;
+	border:#320F04 solid 5px;
+	font-family: 'Permanent Marker', cursive;
+	border-radius:10px;
+	outline: none;
+	box-shadow: 5px 5px 0px white;
+	width:100px;
+	height:50px;
+	cursor: url(../Image/Chopsticks.cur), pointer;
+	box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6), inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+#saveLoad button:active{
+	box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+#saveAlert, #loadAlert{
+	padding: 20px;
+	background-color: #f44336; /* Red */
+	color: white;
+	margin-bottom: 15px;
+	display:none;
+}
+
+.closebtn {
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+	cursor: url(../Image/Chopsticks.cur), pointer;
+}
+
+.closebtn:hover {
+	color: black;
+}
+
+/*------------------------------------tsunami event-------------------------------*/
+
+.tsunami1{
+	position: absolute;
+	z-index: 9;
+	height: 90%;
+	top:10%;
+	left:-70%;
+
+	-webkit-animation-name:tsunami-movement ;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 10s;
+	-webkit-animation-iteration-count: 1;
+	animation-fill-mode :forwards;
+}
+
+.tsunami2 {
+	position: absolute;
+	z-index: 8;
+	height: 80%;
+	top:15%;
+	left:-60%;
+
+	-webkit-animation-name: tsunami-movement;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 9s;
+	animation-fill-mode :forwards;
+}
+
+.tsunami3 {
+	position: absolute;
+	z-index: 7;
+	height: 70%;
+	top:20%;
+	left:-50%;
+
+	-webkit-animation-name: tsunami-movement;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration:8s;
+	animation-fill-mode :forwards;
+}
+
+.tsunami4 {
+	position: absolute;
+	z-index: 6;
+	height: 60%;
+	top:25%;
+	left:-40%;
+
+	-webkit-animation-name: tsunami-movement;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 7s;
+	animation-fill-mode :forwards;
+}
+
+.tsunami5 {
+	position: absolute;
+	z-index: 5;
+	height: 50%;
+	top:30%;
+	left:-30%;
+
+	-webkit-animation-name: tsunami-movement;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 6s;
+	animation-fill-mode :forwards;
+}
+
+@-webkit-keyframes tsunami-movement {
+	99% {
+    	opacity: 0;
+    	-webkit-transform: translateX(250%);
+    	-moz-transform: translateX(250%);
+    	transform: translateX(250%);
+    	animation-iteration-count: 1;
+  	}
+  	100% {
+  		opacity:0;
+  	}
+}
+
+#tsu{
+	display:none;
+}
